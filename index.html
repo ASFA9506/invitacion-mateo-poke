@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡11° Cumpleaños de Mateo!</title>
+    <style>
+        :root {
+            --poke-red: #ff0000;
+            --poke-blue: #3b4cca;
+            --fire-orange: #ff4500;
+            --fire-yellow: #ffae00;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a1a;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .invitation-card {
+            background: white;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 25px;
+            border: 8px solid var(--poke-red);
+            text-align: center;
+            padding-bottom: 30px;
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.5);
+        }
+
+        .header-banner {
+            background: var(--poke-red);
+            padding: 20px;
+            color: white;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+        }
+
+        .fire-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .fire-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--fire-orange) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+            z-index: 1;
+            animation: pulse-fire 1.5s infinite alternate;
+        }
+
+        @keyframes pulse-fire {
+            from { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1.3); box-shadow: 0 0 40px var(--fire-orange); }
+        }
+
+        .charizard-img {
+            position: relative;
+            z-index: 2;
+            width: 180px;
+        }
+
+        .menu-box {
+            background: #fff9e6;
+            margin: 15px 25px;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid var(--fire-orange);
+            text-align: left;
+        }
+
+        .menu-box h3 {
+            margin-top: 0;
+            color: var(--fire-orange);
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .info-box { background: #f9f9f9; margin: 15px 25px; padding: 15px; border-radius: 15px; border: 2px dashed var(--poke-blue); }
+        .date-time { font-size: 1.1rem; font-weight: bold; color: #333; }
+        
+        #countdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 40px; }
+        .time-unit { background: var(--poke-blue); color: white; padding: 10px; border-radius: 10px; }
+        .time-unit span { display: block; font-size: 1.2rem; font-weight: bold; }
+        .time-unit small { font-size: 0.7rem; text-transform: uppercase; }
+
+        .btn { display: block; margin: 10px 40px; padding: 15px; border-radius: 30px; text-decoration: none; font-weight: bold; color: white; transition: 0.2s; }
+        .btn-wa { background: #25d366; }
+        .btn-map { background: var(--poke-blue); }
+        .btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+<div class="invitation-card">
+    <div class="header-banner">
+        <h1>¡TE ELIJO A TI!</h1>
+        <p>Acompaña a nuestro Maestro Pokémon Mateo</p>
+    </div>
+
+    <h2 style="color:var(--poke-blue); margin-top: 20px;">En su Decimoprimer cumpleaños</h2>
+
+    <div class="fire-container">
+        <div class="fire-glow"></div>
+        <img src="https://charizard-sol.xyz/images/charizard.gif" class="charizard-img" alt="Charizard">
+    </div>
+
+    <div class="info-box">
+        <div class="date-time">
+            📅 Lunes 16 de Marzo | 🕒 12:00 PM<br>
+            📍 Terraza RenaC
+        </div>
+    </div>
+
+    <div class="menu-box">
+        <h3>🍴 Banquete de Maestro Pokémon</h3>
+        <p style="text-align: center; font-weight: bold; color: #333; margin-bottom: 10px;">
+            ¡Contaremos con un menú legendario!
+        </p>
+        <div style="background: white; padding: 10px; border-radius: 10px; border: 1px solid #ffae00;">
+            <p style="margin: 0; font-size: 1rem; color: #444; text-align: center;">
+                La comida será servida por <strong>Tortas Doña Lucía</strong>, deleitándonos con sus ya gustadas:
+            </p>
+            <p style="margin: 10px 0 0 0; font-size: 1.2rem; color: var(--fire-orange); text-align: center; font-weight: bold;">
+                🔥 ¡Tortas Ahogadas Estilo Jalisco! 🔥
+            </p>
+        </div>
+        <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: 10px;">
+            *(Habrá opción sin picante para los pequeños entrenadores)*
+        </p>
+    </div>
+
+    <p style="font-weight:bold; color:#666; margin-bottom:5px;">La aventura inicia en:</p>
+    <div id="countdown">
+        <div class="time-unit"><span id="days">00</span><small>Días</small></div>
+        <div class="time-unit"><span id="hours">00</span><small>Hrs</small></div>
+        <div class="time-unit"><span id="minutes">00</span><small>Min</small></div>
+    </div>
+
+    <a href="https://wa.me/5213337794271?text=¡Confirmo%20asistencia%20al%20cumpleaños%20de%20Mateo!%20🔥" class="btn btn-wa">Confirmar WhatsApp ✅</a>
+    <a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="btn btn-map">Ver Ubicación 📍</a>
+</div>
+
+<script>
+    const eventDate = new Date(2026, 2, 16, 12, 0, 0).getTime();
+    setInterval(function() {
+        const now = new Date().getTime();
+        const dist = eventDate - now;
+        if (dist > 0) {
+            document.getElementById("days").innerText = Math.floor(dist / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+        } else {
+            document.getElementById("countdown").innerHTML = "<h3 style='grid-column: span 3; color: var(--poke-red);'>¡ES HOY!</h3>";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
